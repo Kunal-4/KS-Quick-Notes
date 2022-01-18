@@ -31,13 +31,13 @@ function showNotes() {
 
     let html = ""; // Variable to store code of a card element
     notesObj.forEach(function (element, index) {
-        html +=' <div class="noteCard my-2 mx-2 card" style = "width: 18rem;" > \
+        html +=` <div class="noteCard my-2 mx-2 card" style = "width: 18rem;" > \
                 <div class="card-body"> \
                     <h5 class="card-title">Note ${index + 1}</h5> \
                     <p class="card-text"> ${element}</p> \
                     <button id="${index}" onclick="deleteNote(this.id)" class="btn btn-primary">Delete Note</button> \
                 </div> \
-            </div > ';
+            </div > `;
     }); // How to show a parameter of a function in the html code
 
 
@@ -65,7 +65,7 @@ function deleteNote(index){
     }
     
     notesObj.splice(index, 1); // Local variable created
-    localStorage.setItem("notes"), JSON.stringify(notesObj);
+    localStorage.setItem("notes", JSON.stringify(notesObj));
     showNotes();
 }
 
